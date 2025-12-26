@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORM A - Mediation Application</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        label { font-weight: bold; }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+        button {
+            padding: 10px 25px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">
+    FORM ‘A’<br>
+    MEDIATION APPLICATION FORM<br>
+    [REFER RULE 3(1)]
+</h2>
+
+<p style="text-align:center;">
+    Mumbai District Legal Services Authority<br>
+    City Civil Court, Mumbai
+</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    <h3>DETAILS OF PARTIES</h3>
+
+    <!-- Applicant -->
+    <label>1. Name of Applicant</label>
+    <input type="text" name="client_name" required>
+
+    <label>Registered Address (Applicant)</label>
+    <textarea name="branch_address" required></textarea>
+
+    <label>Correspondence Branch Address</label>
+    <textarea name="correspondence_address" required></textarea>
+
+    <label>Telephone No.</label>
+    <input type="text" name="telephone_no">
+
+    <label>Mobile No.</label>
+    <input type="text" name="mobile">
+
+    <label>Email ID</label>
+    <input type="email" name="email" value="info@kslegal.co.in">
+
+    <hr>
+
+    <!-- Opposite Party -->
+    <label>2. Name of Opposite Party (Defendant)</label>
+    <input type="text" name="customer_name" required>
+
+    <label>Registered Address (Opposite Party)</label>
+    <textarea name="op_registered_address"></textarea>
+
+    <label>Correspondence Address (Opposite Party)</label>
+    <textarea name="op_correspondence_address"></textarea>
+
+    <label>Telephone No.</label>
+    <input type="text" name="op_telephone">
+
+    <label>Mobile No.</label>
+    <input type="text" name="op_mobile">
+
+    <label>Email ID</label>
+    <input type="email" name="op_email">
+
+    <hr>
+
+    <!-- Dispute -->
+    <h3>DETAILS OF DISPUTE</h3>
+
+    <p><strong>THE COMMERCIAL COURTS (PRE-INSTITUTION SETTLEMENT) RULES, 2018</strong></p>
+
+    <label>
+        Nature of disputes as per section 2(1)(c) of the Commercial Courts Act, 2015:
+    </label>
+    <textarea name="dispute_nature"></textarea>
+
+    <button type="submit">Generate Word Document</button>
+</form>
+
+</body>
+</html>
