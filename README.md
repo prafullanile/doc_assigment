@@ -66,7 +66,7 @@ assigment/
 
 ##  How to Run Locally
 
-### 1Clone Repository
+### Clone Repository
 ```bash
 git clone https://github.com/yourusername/pdf_to_doc.git
 cd pdf_to_doc
